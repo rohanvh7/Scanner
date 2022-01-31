@@ -31,7 +31,7 @@ Add camera permission to AndroidManifest.xml (Don't forget about dynamic permiss
 ```
 Define a view in your layout file:
 
-#### Activity_Main.xml
+#### activity_main.xml
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
@@ -57,6 +57,68 @@ Define a view in your layout file:
         app:frameThickness="2dp"
         app:maskColor="#77000000"/>
 </FrameLayout>
+```
+#### dialog_scan_result.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:background="@color/white"
+    android:paddingEnd="16dp"
+    android:paddingStart="16dp"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif"
+        android:maxLines="5"
+        android:textColor="@color/design_default_color_primary_variant"
+        android:textSize="15sp"
+        tools:text="Scan result"/>
+
+    <TextView
+        android:id="@+id/format"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif"
+        android:maxLines="2"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        tools:text="Code format"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/copy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/copy"
+            tools:ignore="ButtonStyle"/>
+
+        <Button
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/close"
+            tools:ignore="ButtonStyle"/>
+    </LinearLayout>
+</LinearLayout>
 ```
 And add following code to your activities:
 
